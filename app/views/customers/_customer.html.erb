@@ -1,0 +1,29 @@
+<div class="column is-one-third">
+  <div class="card">
+    <div class="card-content">
+      <% if customer.image.attached? %>
+        <div class="media">
+          <div class="media-left">
+            <%= image_tag customer.image, class: "image is-128x128" %>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><%= customer.full_name %></p>
+            <p class="subtitle is-6">Phone: <%= customer.phone_number %></p>
+            <p class="subtitle is-6">Email: <%= customer.email.present? ? customer.email : 'Not provided' %></p>
+          </div>
+        </div>
+      <% else %>
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4"><%= customer.full_name %></p>
+            <p class="subtitle is-6">Phone: <%= customer.phone_number %></p>
+            <p class="subtitle is-6">Email: <%= customer.email.present? ? customer.email : 'Not provided' %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="content">
+        <p><strong>Notes:</strong> <%= customer.notes %></p>
+      </div>
+    </div>
+  </div>
+</div>
